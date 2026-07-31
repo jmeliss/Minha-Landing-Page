@@ -2,7 +2,7 @@
 
 ## Landing page pessoal estilo "link in bio", com efeito glitch no título e um mini-game interativo.
 
-🔗 **Site no ar:** _(adicionar link do GitHub Pages aqui depois de publicar)_
+🔗 **Site no ar:** _(jmelissacruz.is-a.dev)_
 
 ## O que tem na página
 
@@ -17,6 +17,9 @@
 - HTML5
 - CSS3 (sem frameworks)
 - JavaScript puro (vanilla JS)
+
+<img width="1275" height="638" alt="visualsite" src="https://github.com/user-attachments/assets/308abfa3-93d7-4f1e-a4f2-679723e30f80" />
+
 
 ## Estrutura dos arquivos
 
