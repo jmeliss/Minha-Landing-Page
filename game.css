@@ -1,0 +1,287 @@
+#pixel-rain-layer{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+#data-pixel-game{
+
+    position:relative;
+
+    width:100%;
+
+    padding:140px 0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:2;
+
+}
+
+.game-container{
+
+    width:min(900px,90%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:60px;
+
+}
+
+.game-title{
+
+    color:var(--text);
+
+    font-size:2rem;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-align:center;
+
+    transition:color .3s ease;
+
+}
+
+/* Estado quando a missão é concluída: o título vira a mensagem de vitória */
+.game-title.completed{
+
+    color:var(--purple);
+
+    text-shadow:0 0 20px rgba(123,63,190,.5);
+
+    animation:titlePulse 2s ease-in-out infinite;
+
+}
+
+@keyframes titlePulse{
+
+    0%,100%{
+
+        text-shadow:0 0 20px rgba(123,63,190,.5);
+
+    }
+
+    50%{
+
+        text-shadow:0 0 35px rgba(123,63,190,.85);
+
+    }
+
+}
+
+.game-area{
+
+    position:relative;
+
+    width:100%;
+
+    height:220px;
+
+    overflow:hidden;
+
+}
+
+#player-bar{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:140px;
+
+    height:12px;
+
+    border-radius:20px;
+
+    background:var(--teal);
+
+    transition:
+
+        box-shadow .25s,
+
+        background .25s;
+
+}
+
+#player-bar.winner{
+
+    background:var(--purple);
+
+    box-shadow:
+
+        0 0 15px var(--purple),
+
+        0 0 30px var(--purple),
+
+        0 0 60px var(--purple);
+
+}
+
+.data-pixel{
+
+    position:fixed;
+
+    border-radius:2px;
+
+    pointer-events:none;
+
+    will-change:transform;
+
+}
+
+.data-pixel,
+#player-bar{
+
+    backface-visibility:hidden;
+
+    transform-style:preserve-3d;
+
+}
+
+#player-bar.winner{
+
+    animation:
+
+        playerGlow 1.5s ease-in-out infinite;
+
+}
+
+
+@keyframes playerGlow{
+
+    0%{
+
+        box-shadow:
+
+            0 0 8px var(--teal);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 0 18px var(--teal),
+
+            0 0 35px var(--teal),
+
+            0 0 55px var(--purple);
+
+    }
+
+    100%{
+
+        box-shadow:
+
+            0 0 8px var(--teal);
+
+    }
+
+}
+
+.data-pixel{
+
+    transition:
+
+        opacity .45s ease,
+
+        transform .1s linear;
+
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width:768px){
+
+    #data-pixel-game{
+
+        padding:100px 0;
+
+    }
+
+    .game-title{
+
+        font-size:1.6rem;
+
+    }
+
+    .game-area{
+
+        height:180px;
+
+    }
+
+    #player-bar{
+
+        width:110px;
+
+        height:10px;
+
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .game-title{
+
+        font-size:1.35rem;
+
+    }
+
+    .game-area{
+
+        height:160px;
+
+    }
+
+    #player-bar{
+
+        width:90px;
+
+        height:9px;
+
+    }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
