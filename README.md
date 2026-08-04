@@ -2,7 +2,7 @@
 
 ## Landing page pessoal estilo "link in bio", com efeito glitch no título e um mini-game interativo.
 
-🔗 **Site no ar:** [jmelissacruz.is-a.dev](https://jmelissacruz.is-a.dev)
+<!--🔗 **Site no ar:** [jmelissacruz.is-a.dev](https://jmelissacruz.is-a.dev)-->
 
 ## O que tem na página
 
